@@ -1,0 +1,194 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#070914">
+  <meta name="description" content="Meet HexxaAI — your AI-powered Discord companion. Explore the terms and privacy practices.">
+  <title>HexxaAI — Beyond the Ordinary</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #070914;
+      --panel: rgba(18, 24, 48, .78);
+      --line: rgba(135, 163, 255, .19);
+      --text: #eef2ff;
+      --muted: #9ba8c9;
+      --cyan: #66e8ff;
+      --violet: #9a83ff;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; min-height: 100vh; color: var(--text);
+      font: 16px/1.7 system-ui, -apple-system, Segoe UI, sans-serif;
+      background:
+        radial-gradient(ellipse at 50% 0%, #19234a 0%, transparent 55%),
+        radial-gradient(ellipse at 90% 65%, #171238 0%, transparent 45%),
+        var(--bg);
+    }
+    a { color: var(--cyan); }
+    a:focus-visible { outline: 2px solid var(--cyan); outline-offset: 5px; }
+    .stars {
+      position: fixed; inset: 0; pointer-events: none; opacity: .45;
+      background-image:
+        radial-gradient(1px 1px at 12% 24%, white 99%, transparent),
+        radial-gradient(2px 2px at 78% 17%, white 99%, transparent),
+        radial-gradient(1px 1px at 43% 71%, white 99%, transparent),
+        radial-gradient(1px 1px at 91% 84%, white 99%, transparent),
+        radial-gradient(2px 2px at 25% 88%, white 99%, transparent),
+        radial-gradient(1px 1px at 64% 43%, white 99%, transparent);
+      background-size: 330px 280px;
+    }
+    header, main, footer { position: relative; }
+    header {
+      max-width: 1100px; margin: auto; padding: 26px 24px;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 20px;
+    }
+    .brand {
+      color: white; font-weight: 850; letter-spacing: 2px;
+      text-decoration: none; font-size: 1.25rem;
+    }
+    .brand span { color: var(--cyan); }
+    nav { display: flex; gap: 22px; flex-wrap: wrap; }
+    nav a, footer a {
+      color: var(--muted); text-decoration: none; font-size: .92rem;
+    }
+    nav a:hover, footer a:hover { color: var(--cyan); }
+    .hero {
+      min-height: 74vh; padding: 100px 24px 80px;
+      display: grid; place-items: center; text-align: center;
+    }
+    .hero-inner { max-width: 780px; }
+    .eyebrow {
+      display: inline-block; border: 1px solid var(--line);
+      border-radius: 999px; padding: 6px 14px;
+      color: var(--cyan); background: rgba(102,232,255,.06);
+      font-size: .78rem; letter-spacing: 2px; text-transform: uppercase;
+    }
+    h1 {
+      margin: 25px 0 12px; font-size: clamp(3rem, 9vw, 6.2rem);
+      line-height: 1.04; letter-spacing: -.06em;
+    }
+    h1 span {
+      background: linear-gradient(100deg, var(--cyan), #b6a5ff 75%);
+      color: transparent; background-clip: text;
+      -webkit-background-clip: text;
+    }
+    .intro {
+      max-width: 590px; margin: 22px auto 30px;
+      color: var(--muted); font-size: 1.1rem;
+    }
+    .actions {
+      display: flex; justify-content: center; flex-wrap: wrap; gap: 14px;
+    }
+    .button {
+      display: inline-flex; align-items: center; justify-content: center;
+      min-height: 48px; padding: 12px 22px; border-radius: 12px;
+      font-weight: 750; text-decoration: none; transition: transform .2s;
+    }
+    .button:hover { transform: translateY(-2px); }
+    .primary {
+      background: linear-gradient(110deg, var(--cyan), #9d94ff);
+      color: #080b19; box-shadow: 0 0 30px #66e8ff20;
+    }
+    .secondary {
+      border: 1px solid var(--line); color: var(--text);
+      background: #ffffff06;
+    }
+    .features {
+      max-width: 1000px; margin: 0 auto 90px; padding: 0 24px;
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+    }
+    .feature {
+      padding: 25px; border: 1px solid var(--line);
+      border-radius: 18px; background: var(--panel);
+      backdrop-filter: blur(12px);
+    }
+    .feature .symbol { font-size: 1.5rem; }
+    .feature h2 { font-size: 1.05rem; margin: 12px 0 6px; }
+    .feature p { color: var(--muted); font-size: .92rem; margin: 0; }
+    footer {
+      border-top: 1px solid var(--line); padding: 26px 24px;
+      display: flex; flex-wrap: wrap; gap: 15px;
+      align-items: center; justify-content: space-between;
+      max-width: 1100px; margin: auto;
+    }
+    footer p { color: var(--muted); font-size: .85rem; margin: 0; }
+    @media (max-width: 650px) {
+      header { align-items: flex-start; flex-direction: column; }
+      nav { gap: 16px; }
+      .hero { min-height: 65vh; padding-top: 65px; }
+      .features { grid-template-columns: 1fr; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important; transition: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="stars" aria-hidden="true"></div>
+  <header>
+    <a class="brand" href="index.html">HEXXA<span>AI</span></a>
+    <nav aria-label="Main navigation">
+      <a href="#about">About</a>
+      <a href="terms.html">Terms</a>
+      <a href="privacy.html">Privacy</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="about">
+      <div class="hero-inner">
+        <span class="eyebrow">Your next adventure starts here</span>
+        <h1>Meet <span>HexxaAI.</span></h1>
+        <p class="intro">
+          A new perspective on AI companionship, built for your Discord
+          universe. Step in, start a conversation, and explore what's next.
+        </p>
+        <div class="actions">
+          <a class="button primary"
+             href="https://discord.com/oauth2/authorize?client_id=1556216570089447444"
+             target="_blank" rel="noopener noreferrer">
+            Add to Discord ↗
+          </a>
+          <a class="button secondary" href="privacy.html">Your privacy matters</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="features" aria-label="About HexxaAI">
+      <article class="feature">
+        <div class="symbol" aria-hidden="true">✧</div>
+        <h2>AI-powered conversations</h2>
+        <p>Interact with HexxaAI through the features made available by the bot.</p>
+      </article>
+      <article class="feature">
+        <div class="symbol" aria-hidden="true">⌘</div>
+        <h2>Made for Discord</h2>
+        <p>Use the bot within Discord, subject to its permissions and platform rules.</p>
+      </article>
+      <article class="feature">
+        <div class="symbol" aria-hidden="true">◈</div>
+        <h2>Transparency first</h2>
+        <p>Read our Terms of Service and Privacy Policy before using HexxaAI.</p>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <p>© <span id="year">2026</span> HexxaAI. An independent Discord application.</p>
+    <nav aria-label="Legal navigation">
+      <a href="terms.html">Terms of Service</a>
+      <a href="privacy.html">Privacy Policy</a>
+    </nav>
+  </footer>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
